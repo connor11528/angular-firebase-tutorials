@@ -1,0 +1,17 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+  </ul>
+  <h3 class="text-muted">appToTakeOverTheWorld</h3>
+</div>
+
+<h3>All terminators</h3>
+<ul>
+  <li ng-repeat='(terminatorId, terminator) in terminators'>
+    {{ terminator.name }} 
+    <div class='btn btn-default' ng-click='deleteTerminator(terminatorId)'>Delete</div>
+  </li>
+</ul>
+
+<input type='text' ng-model='terminator.name'>
+<div class='btn btn-danger' ng-click='createTerminator()'>Create Terminator</div>
