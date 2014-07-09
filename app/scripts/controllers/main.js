@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('appToTakeOverTheWorldApp')
-.controller('MainCtrl', ['$scope', 'Terminator', function ($scope, Terminator) {
+app.controller('MainCtrl', ['$scope', 'Terminator', function ($scope, Terminator) {
 
 	$scope.terminators = Terminator.all;
 

@@ -1,0 +1,9 @@
+{
+  "firebase": "app2takeovertheworld",
+  "public": "app",
+  "ignore": [
+    "firebase.json",
+    ".*",
+    "**/node_modules/**"
+  ]
+}

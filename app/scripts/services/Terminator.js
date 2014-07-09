@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('appToTakeOverTheWorldApp').service('Terminator', ['$firebase', 'FIREBASE_URL', function($firebase, FIREBASE_URL){
+app.service('Terminator', ['$firebase', 'FIREBASE_URL', function($firebase, FIREBASE_URL){
 
 	var ref = new Firebase(FIREBASE_URL + 'terminators');
 
