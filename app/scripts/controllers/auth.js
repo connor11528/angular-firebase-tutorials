@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('NavCtrl', ['$scope', 'Auth', function ($scope, Auth) {
+app.controller('AuthCtrl', function ($scope, Auth) {
 
 	$scope.login = function(){
 		Auth.loginWithTwitter(function(err, user){
@@ -14,4 +14,4 @@ app.controller('NavCtrl', ['$scope', 'Auth', function ($scope, Auth) {
 	$scope.logout = function(){
 		Auth.logout()
 	}
-}])
+})

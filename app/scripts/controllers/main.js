@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', ['$scope', 'Terminator', function ($scope, Terminator) {
+app.controller('MainCtrl', function ($scope, Terminator, Auth) {
 
 	$scope.terminators = Terminator.all;
 
@@ -15,4 +15,4 @@ app.controller('MainCtrl', ['$scope', 'Terminator', function ($scope, Terminator
 			console.log('Terminator deleted!')
 		})
 	};
-}]);
+});
