@@ -7,7 +7,8 @@ var app = angular.module('appToTakeOverTheWorldApp', [
   'ngRoute',
   'firebase',
   'routeSecurity',
-  'simpleLoginTools'
+  'simpleLoginTools',
+  'pubnub.angular.service'
 ])
 
 app.config(function ($routeProvider) {
@@ -61,8 +62,15 @@ app.constant('FIREBASE_URL', 'https://app2takeovertheworld.firebaseio.com/');
 // if user tries to access protected route while not signed in
 app.constant('loginRedirectPath', '/login');
 
-app.run(function(Auth, $rootScope){
+app.run(function(Auth, $rootScope, PubNub){
   // establish authentication
   $rootScope.auth = Auth.init();
+
+  // Fire up PubNub
+  PubNub.init({
+    publish_key:'pub-c-c9d3d41b-0f37-4177-b3d6-e5c38a8c6d6e',
+    subscribe_key:'sub-c-5f5047a0-22ab-11e4-8fb1-02ee2ddab7fe',
+    uuid:'an_optional_user_uuid_jasonshark_'
+  })
 
 })

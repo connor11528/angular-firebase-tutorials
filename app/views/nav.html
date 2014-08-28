@@ -1,7 +1,6 @@
 <div class="header" ng-controller="AuthCtrl">
   <ul class="nav nav-pills pull-right">
     <li><a ng-href="#">Home</a></li>
-    <li ng-if='!auth.user'><a ng-click='login()'>Sign in with twitter</a></li>
     <li ng-if='auth.user'><a ng-href='#/profile/{{ auth.user.thirdPartyUserData.screen_name }}'>Profile</a></li>
     <li ng-if='auth.user'><a ng-click='logout()'>Logout</a></li>
   </ul>

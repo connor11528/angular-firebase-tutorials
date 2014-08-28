@@ -1,13 +1,22 @@
-<h3>All terminators</h3>
-<ul>
-  <li ng-repeat='(terminatorId, terminator) in terminators'>
-    {{ terminator.name }} 
-    <div class='btn btn-default' ng-click='deleteTerminator(terminatorId)'>Delete</div>
-  </li>
-</ul>
+<h3>Global chat</h3>
 
-<input type='text' ng-model='terminator.name'>
-<div class='btn btn-danger' ng-click='createTerminator()'>Create Terminator</div>
+<div class='row' ng-show='auth.user'>
+	<div class='col-md-8'>
+		<div style='height:200px'>
+			<div ng-repeat='message in messages'>{{ message.user }} - {{ message.message }}</div>
+		</div>
 
+		<input type='text' class='form-control' ng-model='currentMess' ng-enter="sendChat()">
 
-<pre>{{ auth | json }}</pre>
+		<div class='btn btn-primary' ng-click='sendChat()'>Send</div>
+	</div>
+</div>
+
+<!-- if user is not signed in -->
+<div class='jumbotron' ng-if='!auth.user'>
+	<h1 class='text-center'>Sign in and get started chatting</h1>
+
+	<div ng-controller='AuthCtrl'>
+		<a ng-click='login()' class='btn btn-large btn-success'>Sign in with twitter</a>
+	</div>
+</div>
